@@ -12,3 +12,9 @@ grunt
 ```
 
 This will install the necessary grunt plugins in order to build the dist file.
+
+### Run
+```
+cd dist
+python -m SimpleHTTPServer 8000
+```
