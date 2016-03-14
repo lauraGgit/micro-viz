@@ -41,6 +41,14 @@ module.exports = function(grunt) {
         }
       }
     },
+    copy: {
+      build: {
+        expand: true,
+        cwd: 'src/data/',
+        src: '**',
+        dest: 'dist/data/',
+      },
+    },
     cssmin: {
       options: {
         banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
@@ -76,6 +84,10 @@ module.exports = function(grunt) {
       templates: {
         files: 'src/**/*.jade',
         tasks: ['jade']
+      },
+      data: {
+        files: 'src/data/*',
+        tasks: ['copy']
       }
 
     }
@@ -95,10 +107,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-fixmyjs');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // ========= // CREATE TASKS =========
 
 // this default task will go through all configuration (dev and production) in each task
-grunt.registerTask('default', ['jshint', 'browserify','uglify', 'cssmin', 'jade']);
+grunt.registerTask('default', ['jshint', 'browserify','uglify', 'copy', 'cssmin', 'jade']);
 
 };
