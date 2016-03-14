@@ -1,0 +1,24 @@
+html
+  title Micropurchase Bids
+  meta(name='description', content='The HTML5 Herald')
+  meta(name='author', content='SitePoint')
+  link(rel='stylesheet', href='css/style.min.css')
+  style.
+  //if lt IE 9
+    script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+  body
+    .usa-grid
+      .usa-width-one-half
+        h3 Price by Bid Number (Sorted)
+        #chart
+      .usa-width-one-half
+        h3 Endprice By Date of Auction
+        #chart2
+    .usa-grid
+      .usa-width-one-half
+        h3 Bids by Time
+        #chart3
+      .usa-width-one-half
+        h3 Bids by normalized time
+        #chart4
+    script(src='js/script.min.js')
